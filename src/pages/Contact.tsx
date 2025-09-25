@@ -77,13 +77,13 @@ ${formData.message}
     {
       icon: MapPin,
       title: 'Location',
-      value: 'Hyderabad',
+      value: '3rd floor, 301 sameeeksha builders and developers, Raghavendra nagar colony, bagayath, uppal, Hyderabad, Telangana, 500039',
       description: 'Visit our office'
     },
     {
       icon: Clock,
       title: 'Business Hours',
-      value: 'Mon - Fri: 9:00 AM - 6:00 PM',
+      value: 'Mon - Fri: 9:00 AM - 5:00 PM',
       description: 'We\'re here to help'
     }
   ];
