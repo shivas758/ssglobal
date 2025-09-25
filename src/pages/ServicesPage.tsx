@@ -113,7 +113,7 @@ const ServicesPage = () => {
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 hero-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <span className="text-sm font-medium text-primary">Our Services</span>
@@ -135,7 +135,7 @@ const ServicesPage = () => {
 
       {/* Main Services */}
       <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {mainServices.map((service, index) => (
               <Card key={index} className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 bg-card/50 backdrop-blur-sm overflow-hidden">
@@ -197,7 +197,7 @@ const ServicesPage = () => {
 
       {/* Process Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
               <span className="text-sm font-medium text-accent">Our Process</span>
@@ -242,7 +242,7 @@ const ServicesPage = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-foreground">
               Ready to Transform Your Workforce?

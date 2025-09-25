@@ -59,7 +59,7 @@ const Industries = () => {
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 hero-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <span className="text-sm font-medium text-primary">Industries We Serve</span>
@@ -82,7 +82,7 @@ const Industries = () => {
 
       {/* Industries Grid */}
       <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
               <Card key={index} className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50">
@@ -122,7 +122,7 @@ const Industries = () => {
 
       {/* Why Industry Expertise Matters */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
@@ -204,7 +204,7 @@ const Industries = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-foreground">
               Ready to Find Industry-Specific Talent?

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navigation from '../components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -17,6 +18,49 @@ import {
 } from 'lucide-react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData({
+      ...formData,
+      service: value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
+    const body = `
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company: ${formData.company}
+Service Interested In: ${formData.service}
+
+Message:
+${formData.message}
+    `;
+    
+    const mailtoUrl = `mailto:info@ssglobalsolutions.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -59,7 +103,7 @@ const Contact = () => {
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 hero-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <MessageSquare className="h-4 w-4 text-primary mr-2" />
@@ -82,7 +126,7 @@ const Contact = () => {
 
       {/* Contact Form & Info */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <Card className="bg-card/50 backdrop-blur-sm border-border/50">
@@ -95,42 +139,71 @@ const Contact = () => {
                     </p>
                   </div>
 
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" placeholder="John" />
+                        <Input 
+                          id="firstName" 
+                          placeholder="John" 
+                          value={formData.firstName}
+                          onChange={handleInputChange}
+                          required
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" placeholder="Doe" />
+                        <Input 
+                          id="lastName" 
+                          placeholder="Doe"
+                          value={formData.lastName}
+                          onChange={handleInputChange}
+                          required
+                        />
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="john@company.com" />
+                      <Input 
+                        id="email" 
+                        type="email" 
+                        placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                      />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone</Label>
-                      <Input id="phone" placeholder="+91 9876543210" />
+                      <Input 
+                        id="phone" 
+                        placeholder="+91 9876543210"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                      />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="company">Company</Label>
-                      <Input id="company" placeholder="Your Company Name" />
+                      <Input 
+                        id="company" 
+                        placeholder="Your Company Name"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                      />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="service">Service Interested In</Label>
-                      <Select>
+                      <Select onValueChange={handleSelectChange}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
                         <SelectContent>
                           {services.map((service) => (
-                            <SelectItem key={service} value={service.toLowerCase().replace(/\s+/g, '-')}>
+                            <SelectItem key={service} value={service}>
                               {service}
                             </SelectItem>
                           ))}
@@ -144,10 +217,13 @@ const Contact = () => {
                         id="message" 
                         placeholder="Tell us about your requirements..." 
                         rows={4}
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
                       />
                     </div>
 
-                    <Button variant="hero" size="lg" className="w-full group">
+                    <Button type="submit" variant="hero" size="lg" className="w-full group">
                       <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                       Send Message
                     </Button>
@@ -228,7 +304,7 @@ const Contact = () => {
 
       {/* Map Section (Placeholder) */}
       <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-12">
             <h2 className="text-4xl font-bold text-foreground">Visit Our Office</h2>
             <p className="text-xl text-muted-foreground">

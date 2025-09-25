@@ -14,7 +14,7 @@ const Index = () => {
       
       {/* Why Choose Us Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
               <Award className="h-4 w-4 text-accent mr-2" />
@@ -58,7 +58,7 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-foreground">
               Ready to Transform Your Workforce?

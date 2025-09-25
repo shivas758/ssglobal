@@ -27,7 +27,7 @@ const About = () => {
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 hero-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <span className="text-sm font-medium text-primary">Who We Are</span>
@@ -50,7 +50,7 @@ const About = () => {
 
       {/* Mission & Vision */}
       <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             <Card className="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 bg-card/50 backdrop-blur-sm">
               <CardContent className="p-8 space-y-6">
@@ -83,7 +83,7 @@ const About = () => {
 
       {/* Why Choose Us */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
               <CheckCircle className="h-4 w-4 text-accent mr-2" />
@@ -120,7 +120,7 @@ const About = () => {
 
       {/* Stats Section */}
       <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center space-y-2">
               <div className="text-4xl font-bold text-accent">500+</div>
