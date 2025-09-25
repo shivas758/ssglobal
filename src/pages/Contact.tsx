@@ -71,7 +71,7 @@ ${formData.message}
     {
       icon: Phone,
       title: 'Phone',
-      value: '7702980066',
+      value: '7702316600,7702326600',
       description: 'Call us during business hours'
     },
     {
@@ -259,44 +259,6 @@ ${formData.message}
                   </Card>
                 ))}
               </div>
-
-              {/* Quick Actions */}
-              <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-border/50">
-                <CardContent className="p-8 space-y-6">
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-foreground">Quick Actions</h3>
-                    <p className="text-muted-foreground">
-                      Need immediate assistance? Choose the option that best fits your needs.
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
-                    <Button variant="hero" size="lg" className="w-full justify-start group">
-                      <Users className="mr-3 h-5 w-5" />
-                      <div className="text-left">
-                        <div className="font-medium">Find Talent</div>
-                        <div className="text-sm opacity-80">Start your recruitment process</div>
-                      </div>
-                    </Button>
-
-                    <Button variant="glass" size="lg" className="w-full justify-start group">
-                      <Target className="mr-3 h-5 w-5" />
-                      <div className="text-left">
-                        <div className="font-medium">HR Consultation</div>
-                        <div className="text-sm opacity-80">Get expert HR advice</div>
-                      </div>
-                    </Button>
-
-                    <Button variant="outline" size="lg" className="w-full justify-start group">
-                      <Phone className="mr-3 h-5 w-5" />
-                      <div className="text-left">
-                        <div className="font-medium">Schedule a Call</div>
-                        <div className="text-sm opacity-80">Book a consultation</div>
-                      </div>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
