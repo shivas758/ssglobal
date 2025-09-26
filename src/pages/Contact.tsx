@@ -323,8 +323,6 @@ ${formData.message}
                       <h4 className="font-semibold text-foreground">Business Hours</h4>
                       <div className="text-muted-foreground space-y-1">
                         <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                        <p>Saturday: 9:00 AM - 2:00 PM</p>
-                        <p>Sunday: Closed</p>
                       </div>
                     </div>
                   </div>
