@@ -48,16 +48,16 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Services Grid - Completely Rebuilt */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Link
               key={index}
               to="/services"
-              className="block relative overflow-hidden bg-white border border-border rounded-2xl tehno-card-hover group cursor-pointer animate-fade-in-up"
+              className="block relative overflow-hidden bg-white border border-border rounded-2xl group cursor-pointer animate-fade-in-up transition-all duration-300 hover:shadow-xl hover:shadow-primary/10"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Background Image */}
+              {/* Background Image Layer */}
               <div 
                 className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-300"
                 style={{
@@ -68,33 +68,39 @@ const Services = () => {
                 }}
               />
               
-              {/* Content Overlay */}
-              <div className="relative z-10 p-8">
-                {/* Icon with hover effects */}
-                <div className="bg-primary/10 backdrop-blur-sm p-4 rounded-xl w-fit mb-6 group-hover:bg-primary/20 transition-colors duration-300 tehno-icon-hover">
-                  <service.icon className="h-8 w-8 text-primary" />
+              {/* Gradient Overlay for Text Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/60 to-white/30 group-hover:from-white/98 group-hover:via-white/70 group-hover:to-white/40 transition-all duration-300" />
+              
+              {/* Content Container */}
+              <div className="relative z-10 p-8 h-full flex flex-col justify-between min-h-[320px]">
+                {/* Top Section - Icon */}
+                <div className="mb-6">
+                  <div className="bg-primary/15 backdrop-blur-sm p-4 rounded-xl w-fit group-hover:bg-primary/25 transition-all duration-300 shadow-lg">
+                    <service.icon className="h-8 w-8 text-primary" />
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div className="space-y-4">
+                {/* Middle Section - Content */}
+                <div className="flex-1 space-y-4">
                   <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
                     {service.description}
                   </p>
                 </div>
 
-                {/* Hover indicator */}
-                <div className="flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2 mt-4">
-                  <span className="text-sm font-semibold uppercase tracking-wider mr-2">Learn More</span>
-                  <ArrowRight className="h-4 w-4" />
+                {/* Bottom Section - Call to Action */}
+                <div className="mt-6 pt-4">
+                  <div className="flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2">
+                    <span className="text-sm font-semibold uppercase tracking-wider mr-2">Learn More</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
                 </div>
               </div>
             </Link>
           ))}
         </div>
-
       </div>
     </section>
   );

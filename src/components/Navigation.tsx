@@ -29,7 +29,7 @@ const Navigation = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold text-foreground">SS GLOBAL</span>
-              <span className="text-xs text-muted-foreground -mt-1">SOLUTIONS</span>
+              <span className="text-xs text-muted-foreground -mt-1 tracking-[0.45em]">SOLUTIONS</span>
             </div>
           </Link>
 

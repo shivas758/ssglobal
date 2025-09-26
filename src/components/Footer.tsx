@@ -19,7 +19,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black text-foreground group-hover:text-primary transition-colors duration-300">SS GLOBAL</span>
-                <span className="text-xs text-muted-foreground -mt-1 uppercase tracking-wider font-medium">SOLUTIONS</span>
+                <span className="text-xs text-muted-foreground -mt-1 uppercase tracking-[0.45em] font-medium">SOLUTIONS</span>
               </div>
             </Link>
             <p className="text-muted-foreground leading-relaxed text-lg">

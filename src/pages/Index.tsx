@@ -30,43 +30,28 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="tehno-card p-10 text-center space-y-8 group cursor-pointer">
-              <div className="relative">
-                <div className="absolute inset-0 tehno-gradient rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                <div className="relative tehno-gradient p-6 rounded-2xl w-fit mx-auto group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                  <CheckCircle className="h-10 w-10 text-white" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-3 h-3 bg-primary rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-300"></div>
+            <div className="tehno-card p-10 text-center space-y-8 group hover:shadow-lg transition-shadow duration-300">
+              <div className="tehno-gradient p-6 rounded-2xl w-fit mx-auto">
+                <CheckCircle className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Proven Track Record</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg group-hover:text-foreground/80 transition-colors duration-300">Over 500 successful partnerships across diverse industries with a 95% client satisfaction rate.</p>
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <h3 className="text-2xl font-bold text-foreground">Proven Track Record</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">Over 500 successful partnerships across diverse industries with a 95% client satisfaction rate.</p>
             </div>
             
-            <div className="tehno-card p-10 text-center space-y-8 group cursor-pointer">
-              <div className="relative">
-                <div className="absolute inset-0 tehno-gradient rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                <div className="relative tehno-gradient p-6 rounded-2xl w-fit mx-auto group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                  <CheckCircle className="h-10 w-10 text-white" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-3 h-3 bg-primary rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-300"></div>
+            <div className="tehno-card p-10 text-center space-y-8 group hover:shadow-lg transition-shadow duration-300">
+              <div className="tehno-gradient p-6 rounded-2xl w-fit mx-auto">
+                <CheckCircle className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Expert Team</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg group-hover:text-foreground/80 transition-colors duration-300">Certified HR professionals with deep industry knowledge and years of experience.</p>
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <h3 className="text-2xl font-bold text-foreground">Expert Team</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">Certified HR professionals with deep industry knowledge and years of experience.</p>
             </div>
             
-            <div className="tehno-card p-10 text-center space-y-8 group cursor-pointer">
-              <div className="relative">
-                <div className="absolute inset-0 tehno-gradient rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                <div className="relative tehno-gradient p-6 rounded-2xl w-fit mx-auto group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                  <CheckCircle className="h-10 w-10 text-white" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-3 h-3 bg-primary rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-300"></div>
+            <div className="tehno-card p-10 text-center space-y-8 group hover:shadow-lg transition-shadow duration-300">
+              <div className="tehno-gradient p-6 rounded-2xl w-fit mx-auto">
+                <CheckCircle className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Tailored Solutions</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg group-hover:text-foreground/80 transition-colors duration-300">Customized HR strategies designed to meet your unique business needs and goals.</p>
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <h3 className="text-2xl font-bold text-foreground">Tailored Solutions</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">Customized HR strategies designed to meet your unique business needs and goals.</p>
             </div>
           </div>
         </div>
