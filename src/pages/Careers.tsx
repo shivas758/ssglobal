@@ -1,4 +1,5 @@
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -82,20 +83,20 @@ const Careers = () => {
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 hero-pattern">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <Award className="h-4 w-4 text-primary mr-2" />
-              <span className="text-sm font-medium text-primary">Join Our Team</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 animate-fade-in-down animate-delay-200">
+              <Award className="h-5 w-5 text-primary mr-3 animate-pulse-scale" />
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Join Our Team</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold">
+            <h1 className="text-5xl lg:text-6xl font-bold animate-fade-in-up animate-delay-300">
               <span className="text-foreground">Build Your Career</span>
               <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="tehno-gradient-text animate-float">
                 with SS Global Solutions
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up animate-delay-400">
               At SS Global Solutions, we're always looking for passionate, driven individuals to join our team. 
               If you're looking for a dynamic environment where you can make a difference, explore our current opportunities.
             </p>
@@ -104,32 +105,32 @@ const Careers = () => {
       </section>
 
       {/* Why Work with Us */}
-      <section className="py-20 bg-muted/30">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              <Users className="h-4 w-4 text-accent mr-2" />
-              <span className="text-sm font-medium text-accent">Why Work with Us</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-              What Makes Us Different
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground animate-fade-in-down">
+              What Makes <span className="tehno-gradient-text">Us Different</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
               We believe in creating an environment where our team members can thrive and make a meaningful impact.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm text-center">
+              <Card 
+                key={index} 
+                className="group tehno-card-hover bg-white border border-border text-center animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-8 space-y-4">
-                  <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-4 rounded-xl w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-primary/10 p-4 rounded-xl w-fit mx-auto group-hover:bg-primary/20 transition-colors duration-300 tehno-icon-hover">
                     <benefit.icon className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                     {benefit.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                     {benefit.description}
                   </p>
                 </CardContent>
@@ -140,16 +141,12 @@ const Careers = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-20">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                <Target className="h-4 w-4 text-primary mr-2" />
-                <span className="text-sm font-medium text-primary">Our Values</span>
-              </div>
+            <div className="space-y-6 animate-slide-in-left">
               <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-                What We Stand For
+                What We <span className="tehno-gradient-text">Stand For</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Our values guide everything we do and shape the culture we've built at SS Global Solutions.
@@ -157,17 +154,21 @@ const Careers = () => {
               
               <div className="space-y-4">
                 {values.map((value, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div className="bg-accent/20 p-2 rounded-lg shrink-0">
-                      <CheckCircle className="h-5 w-5 text-accent" />
+                  <div 
+                    key={index} 
+                    className="flex items-center gap-4 animate-fade-in-up"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="bg-primary/10 p-2 rounded-lg shrink-0 tehno-icon-hover">
+                      <CheckCircle className="h-5 w-5 text-primary" />
                     </div>
-                    <span className="text-lg font-medium text-foreground">{value}</span>
+                    <span className="text-lg font-medium text-foreground tehno-text-hover">{value}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 animate-slide-in-right tehno-card-hover">
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-foreground">Employee Testimonial</h3>
                 <blockquote className="text-lg text-muted-foreground italic leading-relaxed">
@@ -176,7 +177,7 @@ const Careers = () => {
                   industries. The collaborative culture makes every day enjoyable."
                 </blockquote>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 tehno-gradient rounded-full flex items-center justify-center animate-pulse-scale">
                     <span className="text-white font-bold">A</span>
                   </div>
                   <div>
@@ -262,6 +263,8 @@ const Careers = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
       </div>
     </>
   );

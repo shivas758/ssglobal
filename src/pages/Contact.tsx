@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -103,20 +104,20 @@ ${formData.message}
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 hero-pattern">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <MessageSquare className="h-4 w-4 text-primary mr-2" />
-              <span className="text-sm font-medium text-primary">Let's Connect</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 animate-fade-in-down animate-delay-200">
+              <MessageSquare className="h-5 w-5 text-primary mr-3 animate-pulse-scale" />
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Let's Connect</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold">
+            <h1 className="text-5xl lg:text-6xl font-bold animate-fade-in-up animate-delay-300">
               <span className="text-foreground">Get in Touch</span>
               <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="tehno-gradient-text animate-float">
                 We're Here to Help
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up animate-delay-400">
               Whether you need talent, assistance with payroll, or want to learn more about our training programs, 
               we're here to help. Get in touch today, and let's discuss how we can support your business.
             </p>
@@ -125,15 +126,15 @@ ${formData.message}
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
+            <Card className="bg-white border border-border tehno-card-hover animate-slide-in-left">
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h2 className="text-3xl font-bold text-foreground">Send us a Message</h2>
+                    <h2 className="text-3xl font-bold text-foreground">Send us a <span className="tehno-gradient-text">Message</span></h2>
                     <p className="text-muted-foreground">
                       Fill out the form below and we'll get back to you within 24 hours.
                     </p>
@@ -288,6 +289,8 @@ ${formData.message}
           </Card>
         </div>
       </section>
+      
+      <Footer />
       </div>
     </>
   );

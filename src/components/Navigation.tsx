@@ -20,31 +20,41 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-effect">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-primary to-primary/80 p-2 rounded-lg">
+          {/* Clean Logo */}
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="bg-primary p-2 rounded-lg">
               <Users className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-foreground">SS Global Solutions</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-foreground">SS GLOBAL</span>
+              <span className="text-xs text-muted-foreground -mt-1">SOLUTIONS</span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation with hover effects */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-all duration-300 hover:text-primary relative group ${
                   isActive(item.path) ? 'text-primary' : 'text-muted-foreground'
                 }`}
               >
                 {item.label}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
             ))}
-            <Button variant="hero" size="sm" asChild>
-              <a href="tel:+917702316600">
+            <Button 
+              size="sm" 
+              className="tehno-gradient hover:shadow-lg hover:shadow-primary/30 text-white px-6 py-2 rounded-lg tehno-button-hover font-medium" 
+              asChild
+            >
+              <a href="tel:+917702316600" className="flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
                 Get Started
               </a>
@@ -81,7 +91,7 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button variant="hero" size="sm" className="w-full" asChild>
+                <Button size="sm" className="w-full bg-primary hover:bg-primary/90" asChild>
                   <a href="tel:+917702316600" onClick={() => setIsOpen(false)}>
                     <Phone className="h-4 w-4 mr-2" />
                     Get Started

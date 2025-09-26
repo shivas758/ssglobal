@@ -1,4 +1,5 @@
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -115,17 +116,17 @@ const ServicesPage = () => {
       <section className="py-20 hero-pattern">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <span className="text-sm font-medium text-primary">Our Services</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 animate-fade-in-down animate-delay-200">
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Services</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold">
+            <h1 className="text-5xl lg:text-6xl font-bold animate-fade-in-up animate-delay-300">
               <span className="text-foreground">Comprehensive HR Services</span>
               <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="tehno-gradient-text animate-float">
                 to Meet Your Business Needs
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up animate-delay-400">
               From talent acquisition to payroll management, we provide end-to-end workforce solutions 
               that help your business thrive in today's competitive market.
             </p>
@@ -134,19 +135,23 @@ const ServicesPage = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-20 bg-muted/30">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {mainServices.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 bg-card/50 backdrop-blur-sm overflow-hidden">
+              <Card 
+                key={index} 
+                className="group tehno-card-hover bg-white border border-border overflow-hidden animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
                 <CardContent className="p-0">
                   <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                     <div className="p-12 space-y-6">
                       <div className="flex items-center gap-4">
-                        <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-4 rounded-xl">
+                        <div className="bg-primary/10 p-4 rounded-xl group-hover:bg-primary/20 transition-colors duration-300 tehno-icon-hover">
                           <service.icon className="h-8 w-8 text-primary" />
                         </div>
-                        <h2 className="text-3xl font-bold text-foreground">{service.title}</h2>
+                        <h2 className="text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">{service.title}</h2>
                       </div>
                       <p className="text-lg text-muted-foreground leading-relaxed">
                         {service.description}
@@ -259,6 +264,8 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
       </div>
     </>
   );

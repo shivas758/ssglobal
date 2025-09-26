@@ -1,4 +1,5 @@
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -61,17 +62,17 @@ const Industries = () => {
       <section className="py-20 hero-pattern">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <span className="text-sm font-medium text-primary">Industries We Serve</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 animate-fade-in-down animate-delay-200">
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Industries We Serve</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold">
+            <h1 className="text-5xl lg:text-6xl font-bold animate-fade-in-up animate-delay-300">
               <span className="text-foreground">Tailored Solutions</span>
               <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="tehno-gradient-text animate-float">
                 for Every Industry
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up animate-delay-400">
               At SS Global Solutions, we understand that each industry has unique needs when it comes to 
               talent and workforce management. We've partnered with businesses in various sectors to 
               provide specialized HR services tailored to their specific requirements.
@@ -81,11 +82,15 @@ const Industries = () => {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-20 bg-muted/30">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
-              <Card key={index} className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50">
+              <Card 
+                key={index} 
+                className="group tehno-card-hover bg-white border border-border animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-8 space-y-6">
                   <div className="flex items-center gap-4">
                     <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300">
@@ -223,6 +228,8 @@ const Industries = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
       </div>
     </>
   );

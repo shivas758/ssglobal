@@ -1,6 +1,7 @@
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Target, Eye, CheckCircle, Users, Trophy, Heart } from 'lucide-react';
+import { Target, Eye, Users, Trophy, Heart } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -26,20 +27,13 @@ const About = () => {
       <Navigation />
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 hero-pattern">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <span className="text-sm font-medium text-primary">Who We Are</span>
-            </div>
-            <h1 className="text-5xl lg:text-6xl font-bold">
-              <span className="text-foreground">About</span>
-              <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                SS Global Solutions
-              </span>
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-6 max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground animate-fade-in-down">
+              About <span className="tehno-gradient-text">SS Global Solutions</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-in-up animate-delay-200">
               SS Global Solutions is a full-service HR solutions provider specializing in recruitment, payroll, 
               staffing, training, and talent acquisition. With years of experience in optimizing workforce 
               management, we offer tailored services that meet the unique needs of businesses across various industries.
@@ -49,29 +43,29 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-muted/30">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <Card className="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8 space-y-6">
-                <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-4 rounded-xl w-fit">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="bg-white border border-border tehno-card-hover group animate-slide-in-left">
+              <CardContent className="p-8 space-y-4">
+                <div className="bg-primary/10 p-4 rounded-xl w-fit group-hover:bg-primary/20 transition-colors duration-300 tehno-icon-hover">
                   <Target className="h-8 w-8 text-primary" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground">Our Mission</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <h2 className="text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Our Mission</h2>
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                   To connect companies with top talent and help them manage their workforce more efficiently, 
                   fostering sustainable growth and long-term success for both employers and employees.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8 space-y-6">
-                <div className="bg-gradient-to-br from-accent/20 to-primary/20 p-4 rounded-xl w-fit">
-                  <Eye className="h-8 w-8 text-accent" />
+            <Card className="bg-white border border-border tehno-card-hover group animate-slide-in-right">
+              <CardContent className="p-8 space-y-4">
+                <div className="bg-primary/10 p-4 rounded-xl w-fit group-hover:bg-primary/20 transition-colors duration-300 tehno-icon-hover">
+                  <Eye className="h-8 w-8 text-primary" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground">Our Vision</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <h2 className="text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Our Vision</h2>
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                   To be the global leader in HR solutions, delivering exceptional service and long-term success 
                   for our clients and employees through innovative workforce management strategies.
                 </p>
@@ -82,17 +76,13 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              <CheckCircle className="h-4 w-4 text-accent mr-2" />
-              <span className="text-sm font-medium text-accent">Why Choose Us</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-              What Sets Us Apart
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground animate-fade-in-down">
+              What Sets <span className="tehno-gradient-text">Us Apart</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
               We combine expertise, innovation, and dedication to deliver exceptional HR solutions 
               that drive business success.
             </p>
@@ -100,15 +90,19 @@ const About = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50">
+              <Card 
+                key={index} 
+                className="bg-white border border-border tehno-card-hover group cursor-pointer animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-8 space-y-4 text-center">
-                  <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-4 rounded-xl w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-primary/10 p-4 rounded-xl w-fit mx-auto group-hover:bg-primary/20 transition-colors duration-300 tehno-icon-hover">
                     <value.icon className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                     {value.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                     {value.description}
                   </p>
                 </CardContent>
@@ -119,28 +113,30 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center space-y-2">
-              <div className="text-4xl font-bold text-accent">500+</div>
+              <div className="text-3xl font-bold text-primary">500+</div>
               <div className="text-muted-foreground">Companies Served</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-4xl font-bold text-accent">5K+</div>
+              <div className="text-3xl font-bold text-primary">5K+</div>
               <div className="text-muted-foreground">Talent Placed</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-4xl font-bold text-accent">95%</div>
+              <div className="text-3xl font-bold text-primary">95%</div>
               <div className="text-muted-foreground">Success Rate</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-4xl font-bold text-accent">10+</div>
+              <div className="text-3xl font-bold text-primary">10+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </div>
           </div>
         </div>
       </section>
+      
+      <Footer />
       </div>
     </>
   );

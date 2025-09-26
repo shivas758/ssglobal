@@ -1,96 +1,120 @@
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Award, Target } from 'lucide-react';
+import { ArrowRight, Award, Play, Phone } from 'lucide-react';
 import heroImage from '@/assets/hero-business-team.jpg';
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center hero-pattern overflow-hidden">
-      {/* Background geometric shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-3xl"></div>
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroImage} 
+          alt="Professional Business Team" 
+          className="w-full h-full object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/95"></div>
       </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+          {/* Left Content */}
+          <div className="text-left space-y-12">
+            {/* Welcome badge - Animated */}
+            <div className="animate-fade-in-down animate-delay-200 inline-flex items-center px-6 py-3 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm">
+              <Award className="h-5 w-5 text-primary mr-3 animate-pulse-scale" />
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">WELCOME TO SS GLOBAL</span>
+            </div>
 
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                <Award className="h-4 w-4 text-primary mr-2" />
-                <span className="text-sm font-medium text-primary">Excellence in HR Solutions</span>
-              </div>
-              
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-foreground">Empowering Businesses with</span>
-                <br />
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Seamless Workforce Solutions
-                </span>
+            {/* Main heading - Tehno style with animations */}
+            <div className="space-y-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in-up animate-delay-300">
+                <span className="text-foreground block mb-4">Let's Build Something</span>
+                <span className="tehno-gradient-text animate-float">Smarter Together</span>
               </h1>
               
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                SS Global Solutions is dedicated to providing comprehensive staffing, recruiting, training, and payroll services that help businesses thrive. Our team of experts works closely with organizations to source the right talent and create a productive workforce.
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed animate-fade-in-up animate-delay-400">
+                SS Global Solutions delivers comprehensive HR solutions including staffing, recruiting, training, and payroll services. 
+                Partner with us to build exceptional workforces and drive business success.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" asChild className="group">
-                <Link to="/contact">
-                  Get in Touch
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+            {/* CTA Buttons - Tehno style with hover effects */}
+            <div className="flex flex-col sm:flex-row gap-6 pt-8 animate-fade-in-up animate-delay-500">
+              <Button 
+                size="lg" 
+                className="tehno-gradient hover:shadow-lg hover:shadow-primary/30 text-white px-10 py-6 text-lg font-semibold rounded-xl tehno-button-hover group" 
+                asChild
+              >
+                <a href="tel:+917702316600" className="flex items-center justify-center">
+                  <Phone className="mr-3 h-5 w-5 group-hover:animate-pulse" />
+                  Get Started
+                  <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
               </Button>
-              <Button variant="glass" size="lg" asChild>
-                <Link to="/services">
-                  Start Your Talent Search Today
-                  <Target className="ml-2 h-5 w-5" />
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-10 py-6 text-lg font-semibold rounded-xl tehno-button-hover group" 
+                asChild
+              >
+                <Link to="/services" className="flex items-center justify-center">
+                  <Play className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                  Explore Services
                 </Link>
               </Button>
             </div>
+          </div>
 
-            <div className="flex items-center gap-8 pt-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent">500+</div>
-                <div className="text-sm text-muted-foreground">Companies Served</div>
+          {/* Right Image */}
+          <div className="relative animate-scale-in animate-delay-300">
+            <div className="relative">
+              <img 
+                src={heroImage} 
+                alt="Professional Business Team" 
+                className="w-full h-auto rounded-3xl shadow-2xl animate-float"
+              />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl"></div>
+              
+              {/* Floating stats card */}
+              <div className="absolute -top-6 -right-6 bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-xl animate-fade-in-up animate-delay-700">
+                <div className="text-3xl font-bold text-primary mb-1">500+</div>
+                <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent">5K+</div>
-                <div className="text-sm text-muted-foreground">Talent Placed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent">95%</div>
+              
+              {/* Another floating element */}
+              <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-xl animate-fade-in-up animate-delay-800">
+                <div className="text-3xl font-bold text-primary mb-1">95%</div>
                 <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right content - Hero Image */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={heroImage}
-                alt="Professional business team discussing HR solutions"
-                className="w-full h-[600px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
-              
-              {/* Floating card */}
-              <div className="absolute bottom-6 left-6 right-6 glass-effect rounded-xl p-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-accent/20 p-3 rounded-lg">
-                    <Users className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-foreground">Excellence happens when</div>
-                    <div className="text-lg font-bold text-accent">passion meets purpose in the right role.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Stats Section - Moved to bottom */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-20 max-w-4xl mx-auto">
+          <div className="text-center group tehno-card-hover bg-white/50 backdrop-blur-sm border border-white/20 rounded-2xl p-8 animate-scale-in animate-delay-900">
+            <div className="text-4xl font-bold tehno-gradient-text mb-4 group-hover:scale-110 transition-transform duration-300">5K+</div>
+            <div className="text-muted-foreground text-lg font-medium">Talent Placed</div>
+            <div className="w-12 h-1 bg-primary/30 mx-auto mt-4 group-hover:bg-primary transition-colors duration-300"></div>
+          </div>
+          <div className="text-center group tehno-card-hover bg-white/50 backdrop-blur-sm border border-white/20 rounded-2xl p-8 animate-scale-in animate-delay-1000">
+            <div className="text-4xl font-bold tehno-gradient-text mb-4 group-hover:scale-110 transition-transform duration-300">10+</div>
+            <div className="text-muted-foreground text-lg font-medium">Years Experience</div>
+            <div className="w-12 h-1 bg-primary/30 mx-auto mt-4 group-hover:bg-primary transition-colors duration-300"></div>
+          </div>
+          <div className="text-center group tehno-card-hover bg-white/50 backdrop-blur-sm border border-white/20 rounded-2xl p-8 animate-scale-in animate-delay-1100">
+            <div className="text-4xl font-bold tehno-gradient-text mb-4 group-hover:scale-110 transition-transform duration-300">24/7</div>
+            <div className="text-muted-foreground text-lg font-medium">Support</div>
+            <div className="w-12 h-1 bg-primary/30 mx-auto mt-4 group-hover:bg-primary transition-colors duration-300"></div>
           </div>
         </div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 bg-accent/5 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-10 w-16 h-16 bg-primary/10 rounded-full blur-lg animate-pulse-scale"></div>
       </div>
     </section>
   );
