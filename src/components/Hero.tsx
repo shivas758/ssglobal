@@ -29,8 +29,7 @@ const Hero = () => {
             {/* Main heading - Tehno style with animations */}
             <div className="space-y-8">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in-up animate-delay-300">
-                <span className="text-foreground block mb-4">Let's Build Something</span>
-                <span className="tehno-gradient-text animate-float">Smarter Together</span>
+                <span className="tehno-gradient-text animate-float">Empowering Businesses with Seamless Workforce Solutions</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed animate-fade-in-up animate-delay-400">
@@ -77,39 +76,20 @@ const Hero = () => {
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl"></div>
               
-              {/* Floating stats card */}
-              <div className="absolute -top-6 -right-6 bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-xl animate-fade-in-up animate-delay-700">
-                <div className="text-3xl font-bold text-primary mb-1">500+</div>
-                <div className="text-sm text-muted-foreground">Happy Clients</div>
+              {/* Floating accent elements */}
+              <div className="absolute -top-6 -right-6 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-2xl p-4 shadow-xl animate-fade-in-up animate-delay-700">
+                <div className="w-8 h-8 bg-primary/20 rounded-full"></div>
               </div>
               
               {/* Another floating element */}
-              <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-xl animate-fade-in-up animate-delay-800">
-                <div className="text-3xl font-bold text-primary mb-1">95%</div>
-                <div className="text-sm text-muted-foreground">Success Rate</div>
+              <div className="absolute -bottom-6 -left-6 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-xl p-3 shadow-xl animate-fade-in-up animate-delay-800">
+                <div className="w-6 h-6 bg-primary/30 rounded-full"></div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Stats Section - Moved to bottom */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-20 max-w-4xl mx-auto">
-          <div className="text-center group tehno-card-hover bg-white/50 backdrop-blur-sm border border-white/20 rounded-2xl p-8 animate-scale-in animate-delay-900">
-            <div className="text-4xl font-bold tehno-gradient-text mb-4 group-hover:scale-110 transition-transform duration-300">5K+</div>
-            <div className="text-muted-foreground text-lg font-medium">Talent Placed</div>
-            <div className="w-12 h-1 bg-primary/30 mx-auto mt-4 group-hover:bg-primary transition-colors duration-300"></div>
-          </div>
-          <div className="text-center group tehno-card-hover bg-white/50 backdrop-blur-sm border border-white/20 rounded-2xl p-8 animate-scale-in animate-delay-1000">
-            <div className="text-4xl font-bold tehno-gradient-text mb-4 group-hover:scale-110 transition-transform duration-300">10+</div>
-            <div className="text-muted-foreground text-lg font-medium">Years Experience</div>
-            <div className="w-12 h-1 bg-primary/30 mx-auto mt-4 group-hover:bg-primary transition-colors duration-300"></div>
-          </div>
-          <div className="text-center group tehno-card-hover bg-white/50 backdrop-blur-sm border border-white/20 rounded-2xl p-8 animate-scale-in animate-delay-1100">
-            <div className="text-4xl font-bold tehno-gradient-text mb-4 group-hover:scale-110 transition-transform duration-300">24/7</div>
-            <div className="text-muted-foreground text-lg font-medium">Support</div>
-            <div className="w-12 h-1 bg-primary/30 mx-auto mt-4 group-hover:bg-primary transition-colors duration-300"></div>
-          </div>
-        </div>
+
 
         {/* Decorative elements */}
         <div className="absolute top-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-xl animate-float"></div>

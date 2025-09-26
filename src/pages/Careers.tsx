@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Link } from 'react-router-dom';
 import { 
   Award, 
@@ -12,10 +18,64 @@ import {
   CheckCircle,
   DollarSign,
   BookOpen,
-  Coffee
+  Coffee,
+  X,
+  Upload,
+  Send
 } from 'lucide-react';
 
 const Careers = () => {
+  const [applicationForm, setApplicationForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    position: '',
+    experience: '',
+    coverLetter: ''
+  });
+
+  const [resumeForm, setResumeForm] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
+
+  const handleApplicationSubmit = (e: React.FormEvent, positionTitle: string) => {
+    e.preventDefault();
+    
+    const subject = `Job Application for ${positionTitle} - ${applicationForm.firstName} ${applicationForm.lastName}`;
+    const body = `
+Name: ${applicationForm.firstName} ${applicationForm.lastName}
+Email: ${applicationForm.email}
+Phone: ${applicationForm.phone}
+Position Applied For: ${positionTitle}
+Years of Experience: ${applicationForm.experience}
+
+Cover Letter:
+${applicationForm.coverLetter}
+    `;
+    
+    const mailtoUrl = `mailto:careers@ssglobalsolutions.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
+
+  const handleResumeSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const subject = `Resume Submission - ${resumeForm.name}`;
+    const body = `
+Name: ${resumeForm.name}
+Email: ${resumeForm.email}
+Phone: ${resumeForm.phone}
+
+Please find my resume attached.
+    `;
+    
+    const mailtoUrl = `mailto:careers@ssglobalsolutions.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
+
   const benefits = [
     {
       icon: DollarSign,
@@ -168,22 +228,17 @@ const Careers = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 animate-slide-in-right tehno-card-hover">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-foreground">Employee Testimonial</h3>
-                <blockquote className="text-lg text-muted-foreground italic leading-relaxed">
-                  "Working at SS Global Solutions has been incredibly rewarding. The company truly cares about 
-                  professional development and provides opportunities to work with diverse clients across various 
-                  industries. The collaborative culture makes every day enjoyable."
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 tehno-gradient rounded-full flex items-center justify-center animate-pulse-scale">
-                    <span className="text-white font-bold">A</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">Anita Sharma</div>
-                    <div className="text-sm text-muted-foreground">Senior Recruitment Consultant</div>
-                  </div>
+            <div className="relative overflow-hidden rounded-2xl animate-slide-in-right tehno-card-hover">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" 
+                alt="Professional Team Collaboration" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
+                  <h3 className="text-lg font-bold text-foreground mb-2">Join Our Team</h3>
+                  <p className="text-sm text-muted-foreground">Be part of a dynamic and innovative workplace</p>
                 </div>
               </div>
             </div>
@@ -228,12 +283,84 @@ const Careers = () => {
                     </div>
                     
                     <div className="lg:col-span-1">
-                      <Button variant="hero" className="w-full group" asChild>
-                        <Link to="/contact">
-                          Apply Now
-                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button className="w-full group tehno-gradient hover:shadow-lg hover:shadow-primary/30 text-white font-semibold">
+                            Apply Now
+                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-md">
+                          <DialogHeader>
+                            <DialogTitle>Apply for {position.title}</DialogTitle>
+                          </DialogHeader>
+                          <form onSubmit={(e) => handleApplicationSubmit(e, position.title)} className="space-y-4">
+                            <div className="grid grid-cols-2 gap-4">
+                              <div>
+                                <Label htmlFor="firstName">First Name</Label>
+                                <Input 
+                                  id="firstName" 
+                                  value={applicationForm.firstName}
+                                  onChange={(e) => setApplicationForm({...applicationForm, firstName: e.target.value})}
+                                  required
+                                />
+                              </div>
+                              <div>
+                                <Label htmlFor="lastName">Last Name</Label>
+                                <Input 
+                                  id="lastName" 
+                                  value={applicationForm.lastName}
+                                  onChange={(e) => setApplicationForm({...applicationForm, lastName: e.target.value})}
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div>
+                              <Label htmlFor="email">Email</Label>
+                              <Input 
+                                id="email" 
+                                type="email"
+                                value={applicationForm.email}
+                                onChange={(e) => setApplicationForm({...applicationForm, email: e.target.value})}
+                                required
+                              />
+                            </div>
+                            <div>
+                              <Label htmlFor="phone">Phone</Label>
+                              <Input 
+                                id="phone" 
+                                value={applicationForm.phone}
+                                onChange={(e) => setApplicationForm({...applicationForm, phone: e.target.value})}
+                                required
+                              />
+                            </div>
+                            <div>
+                              <Label htmlFor="experience">Years of Experience</Label>
+                              <Input 
+                                id="experience" 
+                                value={applicationForm.experience}
+                                onChange={(e) => setApplicationForm({...applicationForm, experience: e.target.value})}
+                                required
+                              />
+                            </div>
+                            <div>
+                              <Label htmlFor="coverLetter">Cover Letter</Label>
+                              <Textarea 
+                                id="coverLetter"
+                                rows={4}
+                                value={applicationForm.coverLetter}
+                                onChange={(e) => setApplicationForm({...applicationForm, coverLetter: e.target.value})}
+                                placeholder="Tell us why you're interested in this position..."
+                                required
+                              />
+                            </div>
+                            <Button type="submit" className="w-full tehno-gradient">
+                              <Send className="mr-2 h-4 w-4" />
+                              Send Application
+                            </Button>
+                          </form>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   </div>
                 </CardContent>
@@ -254,12 +381,63 @@ const Careers = () => {
               We're always interested in connecting with talented professionals. Send us your resume and we'll 
               keep you in mind for future opportunities.
             </p>
-            <Button variant="hero" size="lg" asChild className="group">
-              <Link to="/contact">
-                Submit Your Resume
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="lg" className="group tehno-gradient hover:shadow-lg hover:shadow-primary/30 text-white font-semibold px-8 py-4">
+                  <Upload className="mr-2 h-5 w-5" />
+                  Submit Your Resume
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Submit Your Resume</DialogTitle>
+                </DialogHeader>
+                <form onSubmit={handleResumeSubmit} className="space-y-4">
+                  <div>
+                    <Label htmlFor="resumeName">Full Name</Label>
+                    <Input 
+                      id="resumeName" 
+                      value={resumeForm.name}
+                      onChange={(e) => setResumeForm({...resumeForm, name: e.target.value})}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="resumeEmail">Email</Label>
+                    <Input 
+                      id="resumeEmail" 
+                      type="email"
+                      value={resumeForm.email}
+                      onChange={(e) => setResumeForm({...resumeForm, email: e.target.value})}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="resumePhone">Phone</Label>
+                    <Input 
+                      id="resumePhone" 
+                      value={resumeForm.phone}
+                      onChange={(e) => setResumeForm({...resumeForm, phone: e.target.value})}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="resume">Resume Upload</Label>
+                    <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
+                      <Upload className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+                      <p className="text-sm text-muted-foreground">
+                        Please attach your resume to the email that will be opened
+                      </p>
+                    </div>
+                  </div>
+                  <Button type="submit" className="w-full tehno-gradient">
+                    <Send className="mr-2 h-4 w-4" />
+                    Send Resume
+                  </Button>
+                </form>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>

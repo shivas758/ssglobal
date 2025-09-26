@@ -96,18 +96,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <h4 className="text-lg font-semibold text-foreground">Subscribe Our Newsletter</h4>
-              <div className="flex gap-3">
-                <Input 
-                  placeholder="Enter your email" 
-                  className="bg-muted/50 border-border/50 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/70 rounded-lg"
-                />
-                <Button className="tehno-btn bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold border border-primary/20 shadow-lg hover:shadow-primary/25 transition-all duration-300">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
+
           </div>
         </div>
 

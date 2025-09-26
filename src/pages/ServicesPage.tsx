@@ -29,7 +29,8 @@ const ServicesPage = () => {
         'Pre-screening and assessment',
         'Cultural fit evaluation'
       ],
-      benefits: ['Reduced time-to-hire', 'Higher quality candidates', 'Lower recruitment costs']
+      benefits: ['Reduced time-to-hire', 'Higher quality candidates', 'Lower recruitment costs'],
+      bgImage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop'
     },
     {
       icon: DollarSign,
@@ -42,7 +43,8 @@ const ServicesPage = () => {
         'Direct deposit setup',
         'Year-end tax document preparation'
       ],
-      benefits: ['100% accuracy guarantee', 'Compliance assurance', 'Time savings']
+      benefits: ['100% accuracy guarantee', 'Compliance assurance', 'Time savings'],
+      bgImage: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
     },
     {
       icon: Users,
@@ -55,7 +57,8 @@ const ServicesPage = () => {
         'Fast deployment of staff',
         'Expertise in diverse sectors'
       ],
-      benefits: ['Scalable workforce', 'Reduced hiring risks', 'Operational flexibility']
+      benefits: ['Scalable workforce', 'Reduced hiring risks', 'Operational flexibility'],
+      bgImage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop'
     },
     {
       icon: GraduationCap,
@@ -68,7 +71,8 @@ const ServicesPage = () => {
         'Technical skill enhancement',
         'Career development planning'
       ],
-      benefits: ['Improved performance', 'Higher retention', 'Succession planning']
+      benefits: ['Improved performance', 'Higher retention', 'Succession planning'],
+      bgImage: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop'
     },
     {
       icon: MessageSquare,
@@ -81,7 +85,8 @@ const ServicesPage = () => {
         'Organizational development',
         'Performance management systems'
       ],
-      benefits: ['Operational efficiency', 'Risk mitigation', 'Strategic alignment']
+      benefits: ['Operational efficiency', 'Risk mitigation', 'Strategic alignment'],
+      bgImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop'
     }
   ];
 
@@ -177,12 +182,24 @@ const ServicesPage = () => {
                       </Button>
                     </div>
                     
-                    <div className={`bg-gradient-to-br from-primary/10 to-accent/10 p-12 flex items-center ${index % 2 === 1 ? 'lg:order-first' : ''}`}>
-                      <div className="space-y-6">
+                    <div className={`relative overflow-hidden p-12 flex items-center ${index % 2 === 1 ? 'lg:order-first' : ''}`}>
+                      {/* Background Image */}
+                      <div 
+                        className="absolute inset-0 opacity-20"
+                        style={{
+                          backgroundImage: `url(${service.bgImage})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          filter: 'blur(3px)'
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10" />
+                      
+                      <div className="relative z-10 space-y-6">
                         <h3 className="text-2xl font-bold text-foreground">Benefits</h3>
                         <div className="space-y-3">
                           {service.benefits.map((benefit, benefitIndex) => (
-                            <div key={benefitIndex} className="flex items-center gap-3 p-3 rounded-lg bg-background/50">
+                            <div key={benefitIndex} className="flex items-center gap-3 p-3 rounded-lg bg-white/80 backdrop-blur-sm">
                               <div className="bg-accent/20 p-2 rounded-full">
                                 <TrendingUp className="h-4 w-4 text-accent" />
                               </div>

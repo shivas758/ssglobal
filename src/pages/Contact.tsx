@@ -72,13 +72,13 @@ ${formData.message}
     {
       icon: Phone,
       title: 'Phone',
-      value: '7702316600,7702326600',
+      value: '7702326600,7702316600',
       description: 'Call us during business hours'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: '3rd floor, 301 sameeeksha builders and developers, Raghavendra nagar colony, bagayath, uppal, Hyderabad, Telangana, 500039',
+      value: 'Hyderabad',
       description: 'Visit our office'
     },
     {
@@ -265,28 +265,93 @@ ${formData.message}
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Interactive Map Section */}
       <section className="py-20 bg-muted/30">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6 mb-12">
-            <h2 className="text-4xl font-bold text-foreground">Visit Our Office</h2>
-            <p className="text-xl text-muted-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-6 mb-12 animate-fade-in-down">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
+              Visit Our <span className="tehno-gradient-text">Office</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Located in the heart of Hyderabad, we're easily accessible and ready to meet in person.
             </p>
           </div>
 
-          <Card className="overflow-hidden bg-card/50 backdrop-blur-sm">
-            <CardContent className="p-0">
-              <div className="bg-gradient-to-br from-primary/20 to-accent/20 h-96 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <MapPin className="h-16 w-16 text-primary mx-auto" />
-                  <h3 className="text-2xl font-bold text-foreground">SS Global Solutions</h3>
-                  <p className="text-lg text-muted-foreground">Hyderabad, Telangana</p>
-                  <p className="text-muted-foreground">Interactive map coming soon</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Map */}
+            <Card className="overflow-hidden bg-card/50 backdrop-blur-sm animate-fade-in-left">
+              <CardContent className="p-0">
+                <div className="relative h-96">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7879019789245!2d78.56831!3d17.393833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIzJzM3LjgiTiA3OMKwMzQnMDkuOSJF!5e0!3m2!1sen!2sin!4v1701234567890!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg"
+                  ></iframe>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Office Information */}
+            <div className="space-y-8 animate-fade-in-right">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-foreground">Office Information</h3>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4 group">
+                    <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Address</h4>
+                      <p className="text-muted-foreground">
+                        Hyderabad, Telangana<br />
+                        India
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4 group">
+                    <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Business Hours</h4>
+                      <div className="text-muted-foreground space-y-1">
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 2:00 PM</p>
+                        <p>Sunday: Closed</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4 group">
+                    <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Phone</h4>
+                      <p className="text-muted-foreground">+91 7702326600</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4 group">
+                    <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <Mail className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Email</h4>
+                      <p className="text-muted-foreground">info@ssglobalsolutions.in</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </section>
       
