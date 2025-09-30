@@ -33,7 +33,7 @@ const Hero = () => {
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed animate-fade-in-up animate-delay-400">
-                SS Global Solutions delivers comprehensive HR solutions including staffing, recruiting, training, and payroll services. 
+                SS Global delivers comprehensive HR solutions including staffing, recruiting, training, and payroll services. 
                 Partner with us to build exceptional workforces and drive business success.
               </p>
             </div>
